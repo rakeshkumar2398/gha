@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: create build
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
       - name: build stage
         run: echo "build the code"
   tests:
@@ -17,7 +17,7 @@ jobs:
     needs: build
     steps:
       - name: test stage
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
       - name: test stage
         run: echo "test stage"
   db-stage:
@@ -25,6 +25,6 @@ jobs:
     needs: ['build','tests']
     steps:
       - name: db-launch
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
       - name: db-launch stage
         run: echo "db-launch"
