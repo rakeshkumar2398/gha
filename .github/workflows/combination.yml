@@ -15,16 +15,16 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     needs: build
-      steps:
-        - name: test stage
-          uses: action/checkout@v3
-        - name: test stage
-          run: echo "test stage"
+    steps:
+      - name: test stage
+        uses: action/checkout@v3
+      - name: test stage
+        run: echo "test stage"
   db-stage:
     runs-on: ubuntu-latest
-    needs: ['build','test']
-      steps:
-        - name: db-launch
-          uses: action/checkout@v3
-        - name: db-launch stage
-          run: echo "db-launch"
+    needs: ['build','tests']
+    steps:
+      - name: db-launch
+        uses: action/checkout@v3
+      - name: db-launch stage
+        run: echo "db-launch"
