@@ -1,10 +1,11 @@
 name: basic workflow
-  on:
+on:
+  push:
     branches:
       - main
 jobs:
   say-hello:
-  runs-on: ubuntu-latest
-steps:
-  -name: print helo statement
-    runs: echo "hello welcome to gha"
+    runs-on: ubuntu-latest
+    steps:
+      - name: print helo statement
+        run: echo "hello welcome to gha"
