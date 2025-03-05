@@ -1,0 +1,10 @@
+name: basic workflow
+  on:
+    branches:
+      - main
+jobs:
+  say-hello:
+  runs-on: ubuntu-latest
+steps:
+  -name: print helo statement
+    runs: echo "hello welcome to gha"
